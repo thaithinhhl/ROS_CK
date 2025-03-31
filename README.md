@@ -1,7 +1,7 @@
 # MIDTERM- ROS PROJECT: BUILD AND CONTROL DIFFERENTIAL DRIVE ROBOT 
 
 ## Hướng dẫn mô phỏng và điều khiển Robot
-### 1.Sau khi git clone về máy tính, build lại *workspace* và *source* không gian làm việc
+### 1. Sau khi git clone về máy tính, build lại *workspace* và *source* không gian làm việc
 
 
 ```bash
@@ -30,9 +30,9 @@ Nếu có vấn đề hay log bị lỗi gì, anh tắt đi rồi launch lại f
 ![Screenshot from 2025-03-31 12-37-38](https://github.com/user-attachments/assets/206224f7-5520-42c6-a7be-3e34e2956ca5)
 
 
-### 4.Điểu khiển Robot Model và Tay Máy bằng bàn phím
+### 4. Điểu khiển Robot Model và Tay Máy bằng bàn phím
 
-Cài đặt gói Teleop Twist Keyboard
+Cài đặt gói Teleop Twist Keyboard 
 ```bash
 sudo apt-get install ros-noetic-teleop-twist-keyboard
 ```
