@@ -6,6 +6,7 @@ Panels:
       Expanded:
         - /Global Options1
         - /Status1
+        - /TF1
       Splitter Ratio: 0.5
     Tree Height: 355
   - Class: rviz/Selection
@@ -147,6 +148,59 @@ Visualization Manager:
       Use Fixed Frame: true
       Use rainbow: true
       Value: true
+    - Class: rviz/TF
+      Enabled: true
+      Filter (blacklist): ""
+      Filter (whitelist): ""
+      Frame Timeout: 15
+      Frames:
+        All Enabled: true
+        base_footprint:
+          Value: true
+        base_link:
+          Value: true
+        cam_link:
+          Value: true
+        gps_link:
+          Value: true
+        lidar_link:
+          Value: true
+        odom:
+          Value: true
+        phai_link:
+          Value: true
+        taymay1_link:
+          Value: true
+        taymay2_link:
+          Value: true
+        trai_link:
+          Value: true
+      Marker Alpha: 1
+      Marker Scale: 0.20000000298023224
+      Name: TF
+      Show Arrows: true
+      Show Axes: true
+      Show Names: true
+      Tree:
+        odom:
+          base_link:
+            base_footprint:
+              {}
+            cam_link:
+              {}
+            gps_link:
+              {}
+            lidar_link:
+              {}
+            phai_link:
+              {}
+            taymay1_link:
+              taymay2_link:
+                {}
+            trai_link:
+              {}
+      Update Interval: 0
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -175,7 +229,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 6.489291191101074
+      Distance: 0.9123694896697998
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -191,9 +245,9 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.4303984045982361
+      Pitch: 0.8503979444503784
       Target Frame: <Fixed Frame>
-      Yaw: 6.278584003448486
+      Yaw: 0.005399887450039387
     Saved: ~
 Window Geometry:
   Displays:
@@ -213,5 +267,5 @@ Window Geometry:
   Views:
     collapsed: false
   Width: 1200
-  X: 72
-  Y: 27
+  X: 98
+  Y: 55
