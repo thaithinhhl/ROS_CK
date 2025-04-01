@@ -5,7 +5,7 @@
 
 
 ```bash
-cd ~/catkin_ws
+cd ~/catkin_ws/xerobotvisai2
 ```
 ```bash
 catkin_make
