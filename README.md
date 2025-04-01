@@ -2,10 +2,11 @@
 
 ## Hướng dẫn mô phỏng và điều khiển Robot
 ### 1. Sau khi git clone về máy tính, build lại *workspace* và *source* không gian làm việc
-
+#### Trước tiên di chuyển vào workspace
 ```bash
-cd ~/catkin_ws/xerobotvisai2
+cd ~/catkin_ws/src
 ```
+#### Sau khi git clone 
 ```bash
 catkin_make
 ```
