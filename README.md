@@ -55,7 +55,7 @@ rosrun xerobotvisai2 arm.py
 ![Screenshot from 2025-03-31 12-40-21](https://github.com/user-attachments/assets/bf66ac40-b21e-447f-934a-e458505f4f8a)
 
 ### KẾT QUẢ 
-
+### Đã hiển thị thành công các topic và xe robot, tay máy di chuyển linh hoạt
 ![Screenshot from 2025-03-31 17-51-00](https://github.com/user-attachments/assets/706cb988-a809-4d96-ba8f-4f6a9edae095)
 
 ![Screenshot from 2025-03-31 17-50-38](https://github.com/user-attachments/assets/5d59cf38-7a0c-4b6d-acd4-416717ca836b)
