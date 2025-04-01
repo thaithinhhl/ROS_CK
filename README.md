@@ -3,7 +3,6 @@
 ## Hướng dẫn mô phỏng và điều khiển Robot
 ### 1. Sau khi git clone về máy tính, build lại *workspace* và *source* không gian làm việc
 
-
 ```bash
 cd ~/catkin_ws/xerobotvisai2
 ```
@@ -46,10 +45,15 @@ chmod +x arm.py
 ```bash
 rosrun teleop_twist_keyboard teleop_twist_keyboard.py
 ```
+![Screenshot from 2025-03-31 12-38-31](https://github.com/user-attachments/assets/942cfe5e-c11d-44d8-ac04-3358da5bbe52)
+
 Điều khiển tay máy di chuyển bằng bàn phím
 ```bash
 rosrun xerobotvisai2 arm.py
 ```
+![Screenshot from 2025-03-31 12-40-21](https://github.com/user-attachments/assets/bf66ac40-b21e-447f-934a-e458505f4f8a)
+
 ### KẾT QUẢ 
+
 ![Screenshot from 2025-03-31 17-51-00](https://github.com/user-attachments/assets/706cb988-a809-4d96-ba8f-4f6a9edae095)
 
