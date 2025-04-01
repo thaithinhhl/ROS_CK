@@ -18,7 +18,7 @@ source devel/setup.bash
 ```bash
 roslaunch xerobotvisai2 gazebo.launch
 ```
-Nếu có vấn đề hay log bị lỗi gì, anh tắt đi rồi launch lại file nhé a
+Nếu có vấn đề hay log bị lỗi gì, anh/thầy hãy tắt đi rồi launch lại file gazebo.launch 
 
 ### GAZEBO
 ![gazebo](https://github.com/user-attachments/assets/14a39cef-c9ea-4daa-aa5d-4e541e89e717)
