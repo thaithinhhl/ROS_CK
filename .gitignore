@@ -1,0 +1,28 @@
+# ROS build files
+build/
+devel/
+install/
+bin/
+lib/
+msg_gen/
+srv_gen/
+*~
+*.pyc
+*.o
+*.a
+*.so
+*.bag
+
+# Eclipse
+.project
+.cproject
+.settings/
+
+# Qt Creator
+CMakeLists.txt.user
+
+# Log files
+*.log
+
+# Catkin custom files
+CATKIN_IGNORE 
