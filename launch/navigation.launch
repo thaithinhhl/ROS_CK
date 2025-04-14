@@ -1,0 +1,34 @@
+<launch>
+  <!-- Chạy AMCL để xác định vị trí -->
+  <arg name="use_map_topic" default="false"/>
+  <arg name="scan_topic" default="scan"/>
+
+  <!-- Tham số cho navigation -->
+  <arg name="custom_param_file" default="$(find xerobotvisai2)/param/dummy.yaml"/>
+
+  <!-- Chạy map_server để cung cấp bản đồ -->
+  <node name="map_server" pkg="map_server" type="map_server" args="$(find xerobotvisai2)/maps/maze_map.yaml" />
+
+  <!-- AMCL cho định vị -->
+  <include file="$(find amcl)/examples/amcl_diff.launch">
+    <arg name="use_map_topic" value="$(arg use_map_topic)"/>
+    <arg name="scan_topic" value="$(arg scan_topic)"/>
+  </include>
+
+  <!-- Chạy move_base cho planning và điều khiển -->
+  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+    <rosparam file="$(find xerobotvisai2)/param/costmap_common_params.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find xerobotvisai2)/param/costmap_common_params.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find xerobotvisai2)/param/local_costmap_params.yaml" command="load" />
+    <rosparam file="$(find xerobotvisai2)/param/global_costmap_params.yaml" command="load" />
+    <rosparam file="$(find xerobotvisai2)/param/base_local_planner_params.yaml" command="load" />
+    <rosparam file="$(find xerobotvisai2)/param/move_base_params.yaml" command="load" />
+    
+    <remap from="cmd_vel" to="cmd_vel"/>
+    <remap from="odom" to="odom"/>
+    <remap from="scan" to="scan"/>
+  </node>
+
+  <!-- Chạy RViz với cấu hình cho navigation -->
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find xerobotvisai2)/rviz/navigation.rviz" />
+</launch> 

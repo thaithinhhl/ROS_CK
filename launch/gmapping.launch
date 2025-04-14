@@ -23,12 +23,12 @@
     <!-- Tần suất cập nhật bản đồ -->
     <param name="map_update_interval" value="1.0"/>
     
-    <!-- Số lượng hạt (particles) - giảm xuống để nhẹ hơn -->
-    <param name="particles" value="30"/>
+    <!-- Số lượng hạt (particles) -->
+    <param name="particles" value="50"/>
     
-    <!-- Phạm vi scan (meters) - điều chỉnh phù hợp với room.world -->
-    <param name="maxRange" value="12.0"/>
-    <param name="maxUrange" value="10.0"/>
+    <!-- Phạm vi scan (meters) -->
+    <param name="maxRange" value="9.0"/>
+    <param name="maxUrange" value="8.5"/>
     
     <!-- Khoảng cách di chuyển tối thiểu để cập nhật -->
     <param name="linearUpdate" value="0.1"/>
@@ -38,20 +38,20 @@
     <param name="delta" value="0.05"/>
     
     <!-- Thời gian lưu slam (stamped) scans -->
-    <param name="temporalUpdate" value="0.5"/>
+    <param name="temporalUpdate" value="1.0"/>
     
     <!-- Xác suất chiếm chỗ / trống -->
     <param name="minimumScore" value="50"/>
-    <param name="srr" value="0.01"/>
+    <param name="srr" value="0.01"/> 
     <param name="srt" value="0.02"/>
     <param name="str" value="0.01"/>
     <param name="stt" value="0.02"/>
     
     <!-- Kích thước bản đồ -->
-    <param name="xmin" value="-10.0"/>
-    <param name="ymin" value="-10.0"/>
-    <param name="xmax" value="10.0"/>
-    <param name="ymax" value="10.0"/>
+    <param name="xmin" value="-15.0"/>
+    <param name="ymin" value="-15.0"/>
+    <param name="xmax" value="15.0"/>
+    <param name="ymax" value="15.0"/>
   </node>
 
   <!-- Khởi chạy rviz với file cấu hình cho gmapping -->
