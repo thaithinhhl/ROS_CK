@@ -7,5 +7,5 @@
 ### Chạy navigation 
 
   - roslaunch xerobotvisai2 gazebo.launch
-  - rosrun xerobotvisai2 maze_navigation
+  - rosrun xerobotvisai2 maze_navigation.py
   - roslaunch xerobotvisai2 gmapping.launch 
