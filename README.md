@@ -2,7 +2,7 @@
 
   - roslaunch xerobotvisai2 gazebo.launch 
   - roslaunch xerobotvisai2 gmapping.launch 
-  - rosrun teleop......... 
+  - rosrun xerobotvisai2 maze_navigation.py hoac rosrun tele....
 
 ### Chạy navigation 
 
