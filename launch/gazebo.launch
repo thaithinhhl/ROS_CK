@@ -1,46 +1,15 @@
 <launch>
-  <!-- Đường dẫn đến file world -->
-  <arg name="world_name" default="$(find xerobotvisai2)/worlds/simple_maze.world"/>
-  <arg name="paused" default="false"/>
-  <arg name="use_sim_time" default="true"/>
-  <arg name="gui" default="true"/>
-  <arg name="headless" default="false"/>
-  <arg name="debug" default="false"/>
-
-  <!-- Khởi chạy Gazebo với file world -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="world_name" value="$(arg world_name)"/>
-    <arg name="paused" value="$(arg paused)"/>
-    <arg name="use_sim_time" value="$(arg use_sim_time)"/>
-    <arg name="gui" value="$(arg gui)"/>
-    <arg name="headless" value="$(arg headless)"/>
-    <arg name="debug" value="$(arg debug)"/>
+    <arg name="world_name" value="$(find xerobotvisai2)/worlds/simple_maze.world"/>
   </include>
-
-  <!-- Thiết lập các biến môi trường cho Gazebo -->
-  <env name="GAZEBO_MODEL_PATH" value="$(find xerobotvisai2)/models:$(optenv GAZEBO_MODEL_PATH)"/>
-
-  <!-- Tải mô hình robot -->
-  <param name="robot_description" textfile="$(find xerobotvisai2)/urdf/xerobotvisai2.urdf" />
-
-  <!-- Đưa mô hình robot vào môi trường -->
-  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
-        args="-urdf -model robot -param robot_description -x -1.5 -y -1.5 -z 0.05"/>
-
-  <!-- Khởi chạy robot state publisher -->
-  <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
-    <param name="publish_frequency" type="double" value="30.0" />
-  </node>
-
-  <!-- Khởi chạy joint state publisher -->
-  <node pkg="joint_state_publisher" type="joint_state_publisher" name="joint_state_publisher">
-    <param name="use_gui" value="false" />
-  </node>
-
+  <param name="robot_description" command="$(find xacro)/xacro $(find xerobotvisai2)/urdf/xerobotvisai2.urdf" />
+  <param name="use_sim_time" value="true"/>
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
   <node name="tf_footprint_base" pkg="tf" type="static_transform_publisher" args="0 0 0 0 0 0 base_link base_footprint 40" />
+  <node name="spawn_model" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -model xerobotvisai2" output="screen" />
   <node name="fake_joint_calibration" pkg="rostopic" type="rostopic" args="pub /calibrated std_msgs/Bool true" />
   <rosparam file="$(find xerobotvisai2)/config/arm.yaml" command="load"/>
   <node name="controller_spawner" pkg="controller_manager" type="spawner" args="joint_state_controller taymay1_joint_position_controller taymay2_joint_position_controller" output="screen"/>
   <node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" />
-  <!-- Không khởi chạy RViz trong gazebo.launch để tránh xung đột -->
+  <!-- <node name="rviz" pkg="rviz" type="rviz" args="-d $(find xerobotvisai2)/rviz/rviz.rviz" required="false" launch-prefix="bash -c 'sleep 3; $0 $@'" /> -->
 </launch>

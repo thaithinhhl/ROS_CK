@@ -10,10 +10,7 @@
   <node name="map_server" pkg="map_server" type="map_server" args="$(find xerobotvisai2)/maps/maze_map.yaml" />
 
   <!-- AMCL cho định vị -->
-  <include file="$(find amcl)/examples/amcl_diff.launch">
-    <arg name="use_map_topic" value="$(arg use_map_topic)"/>
-    <arg name="scan_topic" value="$(arg scan_topic)"/>
-  </include>
+  <include file="$(find amcl)/examples/amcl_diff.launch" />
 
   <!-- Chạy move_base cho planning và điều khiển -->
   <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
