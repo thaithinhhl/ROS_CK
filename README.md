@@ -7,5 +7,6 @@
 ### Chạy navigation 
 
   - roslaunch xerobotvisai2 gazebo.launch
-  - rosrun xerobotvisai2 maze_navigation.py
-  - roslaunch xerobotvisai2 gmapping.launch 
+  - rosrun xerobotvisai2 navigation.launch
+  - roslaunch xerobotvisai2 goal_navigation.py
+  - trong rviz bấm 2S Nav Goal, sau đó chọn 1 vị trí trên bản đồ để xe đi đến 
