@@ -1,12 +1,110 @@
-### Chạy gmapping 
 
-  - roslaunch xerobotvisai2 gazebo.launch 
-  - roslaunch xerobotvisai2 gmapping.launch 
-  - rosrun teleop......... 
+# Robot Gmapping
 
-### Chạy navigation 
+PDF: 
+[ROS_GK-1.pdf](https://github.com/user-attachments/files/19553201/ROS_GK-1.pdf)
 
-  - roslaunch xerobotvisai2 gazebo.launch
-  - roslaunch xerobotvisai2 navigation.launch
-  - rosrun xerobotvisai2 goal_navigation.py
-  - trong rviz bấm 2D Nav Goal, sau đó chọn 1 vị trí trên bản đồ để xe đi đến 
+
+
+
+
+https://github.com/user-attachments/assets/f2fef3fe-7e6d-499a-9c30-d6d76342fc66
+
+
+
+
+
+
+## 🚀 Cài đặt
+
+### 🔧 Bước 1: Tạo ROS Workspace
+
+```bash
+mkdir -p ~/catkin_ws/src
+cd ~/catkin_ws/src
+catkin_init_workspace   
+```
+
+### 📥 Bước 2: Clone Repository
+
+```bash
+git clone https://github.com/thaithinhhl/ROS.git
+mv ROS Assem2
+cd ~/catkin_ws
+catkin_make
+```
+
+### 🧠 Bước 3: Source workspace
+
+```bash
+echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
+source ~/.bashrc
+```
+## 🛰️ Mô phỏng
+
+### 🎯 Bước 4: Khởi chạy mô phỏng trong Gazebo 
+
+``` bash
+roslaunch Assem2 gazebo.launch
+```
+![image](https://github.com/user-attachments/assets/3537c950-77e3-44ca-a8ac-10ff7a62e78b)
+
+
+
+### ⚙️ Bước 5: Load các controller cho robot 
+``` bash
+roslaunch Assem2 start_controllers.launch
+```
+
+### 🌐 Bước 6: Mở RViz để quan sát robot
+```
+roslaunch Assem2 display.launch
+```
+![image](https://github.com/user-attachments/assets/fc796dbb-6f06-4af7-b112-a70360c270c4)
+
+
+### 🦾 Bước 7: Điều khiển tay máy (Arm Controller)
+Điều khiển bẳng 4 phím mũi tên trên bàn phím
+```bash
+rosrun Assem2 arm_teleop_keyboard.py
+```
+
+### 🎮 Bước 8: Điều khiển robot di chuyển
+
+2 cách để điều khiển robot di chuyển:
+
+---
+
+#### 🧭 Cách 1: Gửi lệnh trực tiếp qua topic `/cmd_vel`
+
+```bash
+rostopic pub /cmd_vel geometry_msgs/Twist "linear:
+  x: 3.5
+  y: 0.0
+  z: 0.0
+angular:
+  x: 0.0
+  y: 0.0
+  z: 1.5" -r 10
+```
+#### 🕹️ Cách 2: Chạy script điều khiển bằng bàn phím
+
+```bash
+rosrun Assem2 teleop_keyboard.py
+```
+
+### 🧾 Bước 9: Đọc giá trị encoder từ bánh xe
+
+Có thể kiểm tra vị trí và vận tốc của các joint (bánh xe & tay máy) bằng cách đọc topic:
+
+```bash
+rostopic echo /joint_states
+```
+📌 Topic này cung cấp thông tin về:
+
+  - name: tên các joint (VD: joint_L, joint_R)
+
+  - position: vị trí hiện tại của joint (theo radian)
+
+  - velocity: tốc độ góc hiện tại của joint (rad/s)
+
