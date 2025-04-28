@@ -28,8 +28,8 @@ catkin_init_workspace
 ### 📥 Bước 2: Clone Repository
 
 ```bash
-git clone https://github.com/thaithinhhl/ROS.git
-mv ROS Assem2
+git clone https://github.com/thaithinhhl/ROS_CK.git
+mv ROS xerobotvisai2 
 cd ~/catkin_ws
 catkin_make
 ```
@@ -40,27 +40,23 @@ catkin_make
 echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
 source ~/.bashrc
 ```
-## 🛰️ Mô phỏng
+## 🛰️ Chạy Gmapping 
 
 ### 🎯 Bước 4: Khởi chạy mô phỏng trong Gazebo 
 
 ``` bash
-roslaunch Assem2 gazebo.launch
+roslaunch xerobotvisai2 gazebo.launch
 ```
-![image](https://github.com/user-attachments/assets/3537c950-77e3-44ca-a8ac-10ff7a62e78b)
 
-
-
-### ⚙️ Bước 5: Load các controller cho robot 
+### ⚙️ Bước 5: Chạy rviz
 ``` bash
-roslaunch Assem2 start_controllers.launch
+roslaunch xerobotvisai2 gmapping.launch 
 ```
 
-### 🌐 Bước 6: Mở RViz để quan sát robot
+### 🌐 Bước 6: Điểu khiển xe để quét map
 ```
-roslaunch Assem2 display.launch
+rosrun teleop_twist_keyboard teleop_twist_keyboard.py 
 ```
-![image](https://github.com/user-attachments/assets/fc796dbb-6f06-4af7-b112-a70360c270c4)
 
 
 ### 🦾 Bước 7: Điều khiển tay máy (Arm Controller)
