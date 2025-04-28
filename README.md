@@ -62,22 +62,22 @@ rosrun teleop_twist_keyboard teleop_twist_keyboard.py
 Điều khiển bẳng các phím j, i, l k .
 
 
-## Chạy Navigation 
+## Navigation 
 ⚠️ Để có thể chạy được navigation cần vào trong folder maps/maze_map.yaml đổi đường dẫn image thành đường dẫn trong máy của bạn 
 
 
-### 🧭 Chay mô hình trong gazebo
+### 🎮 Bước 7:  Chay mô hình trong gazebo
 
 ```bash
 roslaunch xerovotvisai2 gazebo.lauch
 ```
-### 🕹️  Chạy navigation
+### 🕹️ Bước 8  Chạy navigation
 
 ```bash
 roslaunch xerobotvisai2 navigation.launch 
 ```
 
-### 🧾 Bước 9: Đọc giá trị encoder từ bánh xe
+## Detect Human Yolov5
 
 Có thể kiểm tra vị trí và vận tốc của các joint (bánh xe & tay máy) bằng cách đọc topic:
 
