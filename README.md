@@ -73,8 +73,11 @@ roslaunch xerovotvisai2 gazebo.lauch
 ```bash
 roslaunch xerobotvisai2 navigation.launch 
 ```
+### Bước 9 Điểu khiển xe dến vị trí cho trước
 
-##🔧 Detect Human Yolov5
+Trong rviz sử dụng 2D Nav Goal sau đó chọn vị trí để robot tìm đường đến vị trí đó 
+
+## 🔧Detect Human Yolov5
 
 #### Cài đặt thư viện cần thiết
 ```
