@@ -77,18 +77,25 @@ roslaunch xerovotvisai2 gazebo.lauch
 roslaunch xerobotvisai2 navigation.launch 
 ```
 
-## Detect Human Yolov5
+##🔧 Detect Human Yolov5
 
-Có thể kiểm tra vị trí và vận tốc của các joint (bánh xe & tay máy) bằng cách đọc topic:
-
-```bash
-rostopic echo /joint_states
+#### Cài đặt thư viện cần thiết
 ```
-📌 Topic này cung cấp thông tin về:
+pip install ultralytics
+pip install opencv-python
+pip install torch torchvision
+```
+#### Chạy module phát hiện người
+1. Đảm bảo đã khởi động Gazebo và camera đang hoạt động:
+   ```
+   roslaunch xerobotvisai2 gazebo.launch
+   ```
 
-  - name: tên các joint (VD: joint_L, joint_R)
+2. Chạy module phát hiện người:
+   ```
+   rosrun xerobotvisai2 detect_human.py
+   ```
 
-  - position: vị trí hiện tại của joint (theo radian)
+3. Module sẽ lắng nghe topic camera `/rrbot/camera1/image_raw` và hiển thị khung hình với các bounding box xung quanh người được phát hiện. 
 
-  - velocity: tốc độ góc hiện tại của joint (rad/s)
-
+⚠️ Nên điều khiển xe ra góc có thể thấy được toàn bộ khung hình người để có thể detect dễ hơn
