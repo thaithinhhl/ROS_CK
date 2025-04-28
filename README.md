@@ -29,7 +29,7 @@ catkin_init_workspace
 
 ```bash
 git clone https://github.com/thaithinhhl/ROS_CK.git
-mv ROS xerobotvisai2 
+mv ROS_CK xerobotvisai2 
 cd ~/catkin_ws
 catkin_make
 ```
@@ -59,34 +59,20 @@ rosrun teleop_twist_keyboard teleop_twist_keyboard.py
 ```
 
 
-### 🦾 Bước 7: Điều khiển tay máy (Arm Controller)
-Điều khiển bẳng 4 phím mũi tên trên bàn phím
+Điều khiển bẳng các phím j, i, l k .
+
+
+### 🎮 Bước 8: Chạy Navigation 
+
+#### 🧭 Chay mô hình trong gazebo
+
 ```bash
-rosrun Assem2 arm_teleop_keyboard.py
+roslaunch xerovotvisai2 gazebo.lauch
 ```
-
-### 🎮 Bước 8: Điều khiển robot di chuyển
-
-2 cách để điều khiển robot di chuyển:
-
----
-
-#### 🧭 Cách 1: Gửi lệnh trực tiếp qua topic `/cmd_vel`
+#### 🕹️  Chạy navigation
 
 ```bash
-rostopic pub /cmd_vel geometry_msgs/Twist "linear:
-  x: 3.5
-  y: 0.0
-  z: 0.0
-angular:
-  x: 0.0
-  y: 0.0
-  z: 1.5" -r 10
-```
-#### 🕹️ Cách 2: Chạy script điều khiển bằng bàn phím
-
-```bash
-rosrun Assem2 teleop_keyboard.py
+roslaunch xerobotvisai2 navigation.launch 
 ```
 
 ### 🧾 Bước 9: Đọc giá trị encoder từ bánh xe
