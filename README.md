@@ -5,8 +5,7 @@ PDF:
 [ROS_GK-1.pdf](https://github.com/user-attachments/files/19553201/ROS_GK-1.pdf)
 
 VIDEO:
-https://drive.google.com/file/d/1rN-20iWv2fpGDsqpc3P26EJrlipx8Auz/view?fbclid=IwY2xjawJ8t7dleHRuA2FlbQIxMABicmlkETEyclVwb3pkT0dubGRRRzRSAR7xXPSnBpqzMjtE04FZ62qkemt-p0JeoXjl71b8RR3-jEslEJM5X6jIzChuAw_aem_kMxFAZ6PSH6Sn5_VUb_zPA
-
+https://byvn.net/IrCE
 
 
 https://github.com/user-attachments/assets/59bf20da-7006-4f77-9fe3-57b78aea29d7
