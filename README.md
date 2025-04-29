@@ -1,5 +1,5 @@
 
-# Robot Gmapping
+# ROS Final Project: Differential Drive Robot with SLAM, Navigation, and YOLOv5 Human Detection
 
 PDF: 
 [ROS_GK-1.pdf](https://github.com/user-attachments/files/19553201/ROS_GK-1.pdf)
@@ -10,7 +10,7 @@ https://byvn.net/IrCE
 
 https://github.com/user-attachments/assets/59bf20da-7006-4f77-9fe3-57b78aea29d7
 
-
+## Hướng dẫn mô phỏng và điều khiển Robot
 
 ## 🚀 Cài đặt
 
